@@ -2,8 +2,8 @@ version: '2.2'
 services:
   miner:
     build: .
-    image: valentinvieriu/docker-xmr-stack-cpu:v1.3.0-1.5.0
-    # image: registry.heroku.com/monero42-1/web
+    # image: valentinvieriu/docker-xmr-stack-cpu:v1.3.0-1.5.0
+    image: registry.heroku.com/hmonero0/web
     container_name: xmr-miner
     # cpuset: '0'
     privileged: true

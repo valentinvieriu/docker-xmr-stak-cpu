@@ -189,7 +189,7 @@
  *
  * httpd_port - Port we should listen on. Default, 0, will switch off the server.
  */
-"httpd_port" : {{ HTTPD_PORT | default("0") }},
+"httpd_port" : {{ PORT | default("0") }},
 
 /*
  * prefer_ipv4 - IPv6 preference. If the host is available on both IPv4 and IPv6 net, which one should be choose?
