@@ -2,19 +2,22 @@ version: '2.2'
 services:
   miner:
     build: .
-    # image: valentinvieriu/docker-xmr-stack-cpu:v1.3.0-1.5.0
-    image: registry.heroku.com/hmonero0/web
+    image: valentinvieriu/docker-xmr-stack-cpu:v1.3.0-1.5.0-now
     container_name: xmr-miner
     # cpuset: '0'
     privileged: true
+    stdin_open: true
     environment:
-      WALLET_ADDRESS: ${WALLET_ADDRESS}.hmonero1+10000
+      WALLET_ADDRESS: ${WALLET_ADDRESS}.amonero1+10000
       POOL_ADDRESS: ${POOL_ADDRESS}
       POOL_PASSWORD: ${POOL_PASSWORD}
+      PORT: 3000
       # CORES: 4
       # AUTO_THREAD_CONFIG: ${AUTO_THREAD_CONFIG}
       # THREAD_CONFIG: ${THREAD_CONFIG}
     # entrypoint: "/bin/sh -c"
+    ports:
+      - 80:3000
     ulimits:
       memlock:
         soft: -1
